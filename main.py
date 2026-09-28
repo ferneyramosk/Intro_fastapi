@@ -82,11 +82,11 @@ def create_movie(body:ModelMoviesPost):
 def update_movie(id:int,body:ModelMoviesUpdate):
     for peli in movies:
         if peli['id']==id:
-            peli.update(body.model_dump()) #otra alternativa valida
+            peli.update(body.model_dump()) #otra alternativa valida  # actualiza todo sin condicion
             """
-            peli['tittle'] = body.tittle
-            peli['overview'] = body.overview    
-            peli['rating']=body.rating
+            peli['tittle'] = body.tittle              # diferencia para guardar por uno
+            peli['overview'] = body.overview          # es que puedo usar un if y dar condicion
+            peli['rating']=body.rating                # if rating < 10 se guarda a lo contrario no
             peli['category']=body.category
             """
 
